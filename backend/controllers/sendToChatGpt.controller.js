@@ -1,5 +1,5 @@
-const api_Key = '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';
-const org_id = 'org-X7RWD6vA16b3nNqI27WpWuTW';
+const api_Key = '';
+const org_id = '';
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
