@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import login from "../api/login.api";
 import { useRef, useState } from "react";
 import CustomButton from "../components/CustomButton";
@@ -7,8 +7,6 @@ const Login = () =>
     const [loading,setLoading] = useState(false); 
     const email = useRef();
     const password = useRef();
-
-    const navigate =  useNavigate();
 
     const handleResponse = (msg, color) =>
     {
@@ -37,7 +35,7 @@ const Login = () =>
             {
                 handleResponse(resp?.data?.message, 'green');
                 localStorage.setItem('session',resp.data.token);
-                navigate('/');
+                window.location.href = '/';
             }
 
             if (resp?.response?.data?.status === 403)

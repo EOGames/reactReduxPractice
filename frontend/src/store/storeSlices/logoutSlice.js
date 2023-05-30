@@ -3,19 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 const userMethods = createSlice({
     name: 'userMethods',
     initialState: null,
-    reducers: 
+    reducers:
     {
-        logout:
+        logout(state, actions) 
         {
-            logout()
-            {
-                localStorage.removeItem('session');
-                console.log('logout Called');
-                window.location.href ='/login';
-            }
+            localStorage.removeItem('session');
+            console.log('logout Called');
+            window.location.href = '/login';
         }
+
     }
 });
-export const {logout} = userMethods.actions;
+export const { logout } = userMethods.actions;
 
 export default userMethods;
